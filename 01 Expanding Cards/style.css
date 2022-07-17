@@ -1,0 +1,76 @@
+* {
+
+  /* 怪异盒模型 */
+  box-sizing: border-box;
+
+}
+
+body {
+  display: flex;
+
+  /* 侧轴(默认纵轴)方向上的对齐方式。 */
+  align-items: center;
+
+  /* 主轴(默认横轴)方向上的对齐方式。 */
+  justify-content: center;
+
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+.panel {
+
+  /* 把背景图像扩展至足够大 以使背景图像完全覆盖背景区域
+     背景图像的某些部分也许无法显示在背景定位区域中 */
+  background-size: cover;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 80vh;
+
+  /* 圆角 */
+  border-radius: 50px;
+
+  color: white;
+  cursor: pointer;
+
+  /* flex: flex-grow flex-shrink flex-basis */
+  flex: 0.5;
+
+  margin: 10px;
+  position: relative;
+  transition: flex 700ms ease-in;
+}
+
+.panel h3 {
+  font-size: 30px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  opacity: 0;
+ 
+  /* transition写在起始: 效果覆盖 起始 → 中点 / 中点 → 终止 
+     transition写在中点: 效果只覆盖 中点 → 终止 */
+
+  /* 起始 */
+  transition: opacity 400ms ease-in 300ms;
+  
+}
+
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+
+  /* 中点 */
+  /* transition: opacity 0.3s ease-in 0.4s; */
+
+}

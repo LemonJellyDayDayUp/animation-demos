@@ -1,0 +1,52 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #eee;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.banner {
+  width: 100vw;
+  position: relative;
+  overflow: hidden;
+}
+
+.banner .wrap {
+  display: flex;
+  width: 500vw;
+  flex-wrap: nowrap;
+}
+
+.banner .wrap a {
+  width: 100vw;
+}
+
+.banner .wrap a img {
+  width: 100%;
+}
+
+.banner .circle {
+  position: absolute;
+  bottom: 3vw;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+
+.banner .circle span {
+  width: 25px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.5);
+  margin: 0 5px;
+  border-radius: 1px;
+}
+
+.banner .circle span.active {
+  background: rgba(255, 255, 255, 1);
+}
+
+
+
