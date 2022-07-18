@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  color: #222;
+  overflow-x: hidden;
+  margin: 0;
+}
+
+.container {
+  background-color: #fafafa;
+
+  /* 旋转基点 */
+  transform-origin: top left;
+
+  transition: transform 0.5s linear;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+
+/* 看 circle button 的位置关系可以把边框和定位打上注释 */
+
+.circle-container {
+  position: fixed;
+  top: -100px;
+  left: -100px;
+}
+
+.circle {
+  background-color: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+.container.show-nav .circle {
+
+  /* 因为 container 转了 20 加上 circle 的 70 就是 90 */
+  transform: rotate(-70deg);
+
+}
+
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100px;
+  background-color: transparent;
+  border: 0;
+  color: #fff;
+}
+
+.circle button:focus {
+  outline: none;
+}
+
+.circle button#open {
+  left: 60%;
+}
+
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+/* 第一个 li */
+.container.show-nav + nav li {
+  transform: translateX(0);
+
+  /* 延迟动画 */
+  transition-delay: 0.3s;
+}
+
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 30px;
+}
+
+/* 所有 li */
+nav ul li {
+
+  /* 文字大写 */
+  text-transform: uppercase;
+
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+
+  font-size: 18px;
+
+  /* background-color: tomato; */
+}
+
+/* 第二(三)个 li */
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+  /* background-color: tomato; */
+}
+
+/* 第三个 li */
+nav ul li + li + li {
+  margin-left: 30px;
+  transform: translateX(-200%);
+  /* background-color: tomato; */
+}
+
+nav a{
+  color: #fafafa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+nav a:hover {
+  color: #FF7979;
+  font-weight: bold;
+}
+
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+
+.content img {
+  max-width: 100%;
+}
+
+.content h1 {
+  margin: 0;
+}
+
+.content small {
+  color: #555;
+  font-style: italic;
+}
+
+.content p {
+  color: #333;
+  line-height: 1.5;
+}
+
+.iconfont {
+  font-size: 30px;
+}

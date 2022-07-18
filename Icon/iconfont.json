@@ -1,0 +1,58 @@
+{
+  "id": "3528403",
+  "name": "AnimationDemos",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "29947",
+      "name": "search",
+      "font_class": "search",
+      "unicode": "e65c",
+      "unicode_decimal": 58972
+    },
+    {
+      "icon_id": "29942",
+      "name": "round_check",
+      "font_class": "roundcheck",
+      "unicode": "e657",
+      "unicode_decimal": 58967
+    },
+    {
+      "icon_id": "29944",
+      "name": "round_close",
+      "font_class": "roundclose",
+      "unicode": "e659",
+      "unicode_decimal": 58969
+    },
+    {
+      "icon_id": "30450",
+      "name": "list",
+      "font_class": "list",
+      "unicode": "e682",
+      "unicode_decimal": 59010
+    },
+    {
+      "icon_id": "33516",
+      "name": "home",
+      "font_class": "home",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
+      "icon_id": "158874",
+      "name": "people",
+      "font_class": "people",
+      "unicode": "e736",
+      "unicode_decimal": 59190
+    },
+    {
+      "icon_id": "1005713",
+      "name": "mail",
+      "font_class": "mail",
+      "unicode": "e7bd",
+      "unicode_decimal": 59325
+    }
+  ]
+}
