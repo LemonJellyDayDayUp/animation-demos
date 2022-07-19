@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.bg {
+  background: url('../Image/img1.jpeg') no-repeat center center/cover;
+  position: absolute;
+  top: -30px;
+  left: -30px;
+
+  /* calc 动态计算长度值 运算符前后都需要保留一个空格 */
+  width: calc(100vw + 60px);
+  height: calc(100vh + 60px);
+
+  z-index: -1;
+  filter: blur(0px);
+}
+
+.loading-text {
+  font-size: 50px;
+  color: #fff;
+}

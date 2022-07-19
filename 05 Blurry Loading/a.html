@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Blurry Loading</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-image: url('../Image/img1.jpeg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      z-index: -1;
+    }
+
+    .blur {
+      position: fixed;
+      top: 0;
+      width: 0;
+      width: 100vw;
+      height: 100vh;
+      backdrop-filter: blur(100px);
+    }
+
+    .loading-text {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      font-size: 50px;
+      color: #fff;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="blur"></div>
+
+  <div class="loading-text">0%</div>
+
+
+  <script>
+
+    const loadText = document.querySelector('.loading-text')
+    const blur = document.querySelector('.blur')
+
+    let load = 0
+
+    let int = setInterval(blurring, 30)
+
+    function blurring() {
+      load++
+      if (load > 99) clearInterval(int)
+      
+      loadText.innerText = `${load}%`
+      loadText.style.opacity = `${(100 - load) / 100}`
+      blur.style.backdropFilter = `blur(${100 - load}px)`
+    }
+
+  </script>
+
+
+</body>
+
+</html>
