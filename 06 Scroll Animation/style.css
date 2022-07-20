@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efedd6;
+  display: flex;
+
+  /* 对齐方式(主轴方向) 默认是 row */
+  /* 还可以有 row-reverse / column-reverse */
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1 {
+  margin: 10px;
+}
+
+.box {
+  background-color: steelblue;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 400px;
+  margin: 10px;
+  border-radius: 10px;
+
+  /* 垂直阴影 水平阴影 模糊距离 (阴影尺寸) 阴影颜色 (内部阴影) */
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+
+  transform: translateX(400%);
+  transition: transform 0.4s ease;
+}
+
+/* odd: 奇数  even: 偶数 */
+/* :nth-child 父元素里所有孩子排序选择 先找 n 再匹配元素 */
+/* :nth-of-type 父元素里指定元素类别排序选择 先匹配元素再找 n */
+.box:nth-of-type(even) {
+  /* background-color: tomato; */
+  transform: translateX(-400%);
+}
+
+.box.show {
+  transform: translateX(0);
+}
+
+.box h2 {
+  font-size: 45px;
+}
